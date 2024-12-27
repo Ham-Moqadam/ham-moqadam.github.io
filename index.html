@@ -18,7 +18,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            <!font-size: 2em;>
         }
         nav {
             position: fixed;
@@ -47,11 +46,27 @@
             padding-bottom: 0.5em;
             margin-bottom: 1em;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1em auto;
+        .photo-section {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 2em;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .photo-section:hover {
+            filter: brightness(0.7); /* Dims the photo when hovered */
+        }
+        .description {
+            display: none;
+            padding: 1em;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .photo-section.active {
+            filter: brightness(1); /* Displays the photo's real color when active */
         }
         footer {
             text-align: center;
@@ -74,50 +89,61 @@
         </nav>
     </header>
 
+    <!-- Bio Section -->
     <section id="bio">
         <h2>Bio</h2>
-        <img src="me_Kottas_small.jpg" alt="Your photo">
-        <p>Hello! My name is Hameed Moqadam. I am a PhD cancicate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. 
-        I enjoy solving complex problems and exploring the wonders of glaciology.</p>
+        <img src="me_Kottas_small.jpg" alt="Your photo" style="max-width: 100%; height: auto;">
+        <p>Hello! My name is Hameed Moqadam. I am a PhD candidate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
     </section>
 
+    <!-- Professional Experience Section -->
     <section id="experience">
         <h2>Professional Experience</h2>
-        <p>I have worked as a deep learning researcher focusing on glaciological applications. My key achievements include developing IRHMapNet, a state-of-the-art tool for tracing radargram features.</p>
+        <div class="photo-section" style="background-image: url('ant_kohnen.jpeg');" onclick="showDescription('experience-desc')"></div>
+        <div id="experience-desc" class="description">
+            <p>I have worked as a deep learning researcher focusing on glaciological applications. My key achievements include developing IRHMapNet, a state-of-the-art tool for tracing radargram features.</p>
+        </div>
     </section>
 
+    <!-- Field Experience Section -->
     <section id="field">
         <h2>Field Experience</h2>
-        <img src="field-photo1.jpg" alt="Fieldwork photo 1">
-        <img src="field-photo2.jpg" alt="Fieldwork photo 2">
-        <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
+        <div class="photo-section" style="background-image: url('ant_shelf.jpeg');" onclick="showDescription('field-desc')"></div>
+        <div id="field-desc" class="description">
+            <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
+        </div>
     </section>
 
+    <!--
+    <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
         <p>Ph.D. in Glaciology, University of Antarctic Research.</p>
         <p>Master's in Data Science, University of Machine Learning.</p>
     </section>
+    -->
 
+    <!-- Publications Section -->
     <section id="publications">
         <h2>Publications</h2>
-        <p>- Review Article: Feature tracing in radio-echo sounding products of terrestrial ice sheets and planetary bodies. 
+        <p>- Review Article: Feature tracing in radio-echo sounding products of terrestrial ice sheets and planetary bodies. </p>
         <p>DOI: <a href="https://doi.org/10.5194/egusphere-2024-1674">10.5194/egusphere-2024-1674</a></p>
-        <p>- Going deeper with deep learning: automatically tracing internal reflection horizons in ice sheets. 
+        <p>- Going deeper with deep learning: automatically tracing internal reflection horizons in ice sheets. </p>
         <p>DOI: <a href="https://doi.org/10.22541/essoar.172987463.39597493/v1">10.22541/essoar.172987463.39597493/v1</a></p>
-        <p>- Basal unit and englacial stratigrpahy mapping (Radargram Horizon1 Delineation) with an Autoregressive Generative Model.
-        (Under preparation)
+        <p>- Basal unit and englacial stratigraphy mapping (Radargram Horizon1 Delineation) with an Autoregressive Generative Model. (Under preparation)</p>
     </section>
 
+    <!-- Miscellaneous Section -->
     <section id="miscellaneous">
         <h2>Miscellaneous</h2>
         <p>I enjoy collaborating with fellow researchers, giving talks at conferences, and participating in open-source projects. Occasionally, I delve into data visualization for fun.</p>
     </section>
 
+    <!-- Hobbies Section -->
     <section id="hobbies">
         <h2>Hobbies</h2>
         <p>- Exploring nature trails and hiking.</p>
-        <p>- Playing DISCGOLF.</p>
+        <p>- Playing DISC GOLF.</p>
         <p>- Playing acoustic guitar.</p>
         <p>- Coding personal projects.</p>
         <p>- Reading science fiction novels and watching documentaries.</p>
@@ -126,5 +152,15 @@
     <footer>
         <p>Created by Hameed Moqadam. Powered by GitHub Pages.</p>
     </footer>
+
+    <script>
+        // Function to show the description and scroll to it
+        function showDescription(id) {
+            var section = document.getElementById(id);
+            section.style.display = "block";
+            section.scrollIntoView({behavior: "smooth"});
+        }
+    </script>
 </body>
 </html>
+
