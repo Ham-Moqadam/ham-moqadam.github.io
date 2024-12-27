@@ -10,9 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #5C618B; /* Set the entire page's background color */
-    	    /*  font-size: 16px;  Default font size for the page */
+            background-color: #5C618B;
         }
+
         header {
             background-color: #333;
             color: white;
@@ -22,295 +22,208 @@
             top: 0;
             z-index: 1000;
         }
+
         nav {
             position: fixed;
             top: 0;
             right: 0;
             padding: 1em;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 0.5em;
             font-size: 1em;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
+
         section {
-            padding: 0em;
-            margin: 0 auto;
+            padding: 2em;
+            margin: 2em auto;
             width: 90%;
-            max-width: 1200px; 
+            max-width: 1200px;
             color: white;
-            background-color:  #5C618B;
+            background-color: #5C618B;
             font-size: 1.5em;
-            margin-bottom: 0em; /* Add consistent spacing between all sections */
+            margin-bottom: 2em;
         }
-        
-		header h1 {
-		    margin: 0; /* Removes default margin for better alignment */
-		    text-align: left; /* Ensures the <h1> is explicitly aligned to the left */
-		}
+
+        header h1 {
+            margin: 0;
+            text-align: left;
+        }
+
         h2 {
             font-size: 1.5em;
             border-bottom: 2px solid #ccc;
             padding-bottom: 0.5em;
             margin-bottom: 1em;
         }
-        
-        
-        
-        
-		/* Flexbox for Bio Section */
-	#bio {
-	    display: flex;
-	    flex-direction: column; /* Default for smaller screens */
-	    align-items: left;
-	    text-align: left;
-	    margin: 2em auto;
-	    max-width: 1200px; /* Optional: Adjust based on layout */
-	}
 
-	#bio img {
-	    max-width: 40%;
-	    height: auto;
-	    margin-right: 1em;
-	    border-radius: 10px; /* Optional: Rounded corners for a polished look */
-	}
+        #bio {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            text-align: left;
+        }
 
-	#bio .bio-container {
-	    display: flex;
-	    flex-direction: row; /* Place items side by side */
-	    align-items: center;
-	    justify-content: center; /* Adjust alignment */
-	    text-align: left; /* Align text properly */
-	    gap: 1em; /* Space between the image and text */
-	}
+        #bio img {
+            max-width: 40%;
+            height: auto;
+            margin-right: 1em;
+            border-radius: 10px;
+        }
 
-	@media (max-width: 768px) {
-	    #bio .bio-container {
-		flex-direction: column; /* Stack vertically for smaller screens */
-	    }
+        #bio .bio-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            gap: 1em;
+        }
 
-	    #bio img {
-		margin: 0 auto 1em;
-	    }
-	}
+        @media (max-width: 768px) {
+            #bio .bio-container {
+                flex-direction: column;
+            }
 
-        
-        
-        
-        
-        
-        
-        .photo-section {
+            #bio img {
+                margin: 0 auto 1em;
+            }
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .photo-item {
+            flex: 1 1 calc(33.333% - 1em);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .photo-item img {
             width: 100%;
-            height: 400px;
-            margin-bottom: 2em;
-            background-size: cover;
-            background-position: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
-        .photo-section:hover {
-            filter: brightness(0.7); /* Dims the photo when hovered */
+
+        .photo-item img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
         }
-        .description {
-            display: none;
-            padding: 1em;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        .photo-caption {
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            color: orange;
         }
-        .photo-section.active {
-            filter: brightness(1); /* Displays the photo's real color when active */
+
+        .field-description {
+            margin-top: 2em;
+            font-size: 1em;
+            color: white;
         }
+
         footer {
             text-align: center;
             padding: 2em;
             background-color: #dddaff;
         }
-        
 
-        /* Additional CSS for CV and Contact Sections */
-        #cv, #contact {
-            margin: 2em auto;
-            max-width: 1200px;
-            text-align: center;
+        iframe {
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1em;
         }
+
+        .download-btn {
+            text-align: left;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
         #contact img:hover {
             transform: scale(1.1);
             transition: transform 0.2s;
-        }        
-        
-		
-		#cv {
-	    text-align: left;
-	    margin: 2em auto;
-	    max-width: 1200px;
-	    height: 800px; /* Adjust the height as needed */
-	    padding-bottom: 8em;
-	}
+        }
 
-	iframe {
-	    border: 1px solid #ccc;
-	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	    margin-bottom: 1em;
-	}
-
-	.download-btn {
-	    text-align: left;
-	    text-decoration: none;
-	    padding: 0.5em 1em;
-	    background-color: #007bff;
-	    color: white;
-	    border-radius: 5px;
-	    font-weight: bold;
-	    transition: background-color 0.3s;
-	}
-
-	.download-btn:hover {
-	    background-color: #0056b3;
-	}
-
-		#field {
-	    text-align: left;
-	    /* background-color: #dddaff;  Background color for the section */
-	    padding: 2em;
-	}
-
-	.photo-grid {
-	    display: flex;
-	    flex-wrap: wrap;
-	    gap: 1em;
-	    justify-content: center; /* Center the grid items */
-	}
-
-	.photo-item {
-	    flex: 1 1 calc(33.333% - 1em); /* Each photo takes up a third of the row */
-	    max-width: 500px; /* Optional: Limit the size of the photos */
-	    text-align: center;
-	}
-
-	.photo-item img {
-	    width: 100%;
-	    height: auto;
-	    border-radius: 8px; /* Optional: Add rounded corners */
-	    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
-	}
-
-	.photo-item img:hover {
-	    transform: scale(1.05); /* Slight zoom on hover */
-	    filter: brightness(1.2); /* Brightens the image on hover */
-	}
-
-	.photo-caption {
-	    margin-top: 0.5em;
-	    font-size: 0.9em;
-	    color: orange;
-	}
-
-	.field-description {
-	    margin-top: 2em;
-	    font-size: 1em;
-	    color: white;
-	}
-
-        
-        
-        
-        
-        
-        
     </style>
-    
-    
-    
-    
-    
 </head>
 <body>
     <header>
         <h1> Hey, I'm Hameed</h1>
         <nav>
             <a href="#bio">Bio</a>
-            <a href="#experience">Professional Experience</a>
             <a href="#field">Field Experience</a>
-            <a href="#education">Education</a>
+            <a href="#cv">CV</a>
             <a href="#publications">Publications</a>
             <a href="#miscellaneous">Miscellaneous</a>
             <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-
-
-
-<!-- Bio Section -->
-<section id="bio">
-    <h2>Bio</h2>
-    <div class="bio-container">
-        <img src="me_Kottas_small.jpg" alt="Your photo">
-        <p>Hello! My name is Hameed Moqadam. I am a PhD candidate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
-    </div>
-</section>
-
-
-
-
-	<!-- Field Experience Section -->
-	<section id="field">
-	    <h2>Field Experience</h2>
-	    <!-- Photo Grid -->
-	    <div class="photo-grid">
-		<div class="photo-item">
-		    <img src="ant_shelf.jpeg" alt="Antarctic Shelf">
-		    <p class="photo-caption">Antarctic Ice Shelf</p>
-		</div>
-		<div class="photo-item">
-		    <img src="ant_troll.jpeg" alt="Troll Research Station">
-		    <p class="photo-caption">Troll Research Station</p>
-		</div>
-		<div class="photo-item">
-		    <img src="ant_kohnen.jpeg" alt="Kohnen Station">
-		    <p class="photo-caption">Kohnen Station</p>
-		</div>
-	    </div>
-	    <!-- Section Description -->
-	    <div class="field-description">
-		<p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
-	    </div>
-	</section>
-
-
-
-
-<!--
-    <section id="education">
-        <h2>Education</h2>
-        <p>Ph.D. in Glaciology, University of Antarctic Research.</p>
-        <p>Master's in Data Science, University of Machine Learning.</p>
+    <section id="bio">
+        <h2>Bio</h2>
+        <div class="bio-container">
+            <img src="me_Kottas_small.jpg" alt="Your photo">
+            <p>Hello! My name is Hameed Moqadam. I am a PhD candidate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
+        </div>
     </section>
--->
 
-    <!-- Publications Section -->
+    <section id="field">
+        <h2>Field Experience</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="ant_shelf.jpeg" alt="Antarctic Shelf">
+                <p class="photo-caption">Antarctic Ice Shelf</p>
+            </div>
+            <div class="photo-item">
+                <img src="ant_troll.jpeg" alt="Troll Research Station">
+                <p class="photo-caption">Troll Research Station</p>
+            </div>
+            <div class="photo-item">
+                <img src="ant_kohnen.jpeg" alt="Kohnen Station">
+                <p class="photo-caption">Kohnen Station</p>
+            </div>
+        </div>
+        <div class="field-description">
+            <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
+        </div>
+    </section>
+
     <section id="publications">
         <h2>Publications</h2>
-        <p>- Review Article: Feature tracing in radio-echo sounding products of terrestrial ice sheets and planetary bodies. </p>
+        <p>- Review Article: Feature tracing in radio-echo sounding products of terrestrial ice sheets and planetary bodies.</p>
         <p>DOI: <a href="https://doi.org/10.5194/egusphere-2024-1674">10.5194/egusphere-2024-1674</a></p>
-        <p>- Going deeper with deep learning: automatically tracing internal reflection horizons in ice sheets. </p>
+        <p>- Going deeper with deep learning: automatically tracing internal reflection horizons in ice sheets.</p>
         <p>DOI: <a href="https://doi.org/10.22541/essoar.172987463.39597493/v1">10.22541/essoar.172987463.39597493/v1</a></p>
         <p>- Basal unit and englacial stratigraphy mapping (Radargram Horizon1 Delineation) with an Autoregressive Generative Model. (Under preparation)</p>
     </section>
 
-    <!-- Miscellaneous Section -->
     <section id="miscellaneous">
         <h2>Miscellaneous</h2>
         <p>I enjoy collaborating with fellow researchers, giving talks at conferences, and participating in open-source projects. Occasionally, I delve into data visualization for fun.</p>
     </section>
 
-    <!-- Hobbies Section -->
     <section id="hobbies">
         <h2>Hobbies</h2>
         <p>- Exploring nature trails and hiking.</p>
@@ -320,79 +233,36 @@
         <p>- Reading science fiction novels and watching documentaries.</p>
     </section>
 
+    <section id="cv">
+        <h2>CV</h2>
+        <iframe src="HAMEED_MOQADAM_CV.pdf" width="100%" height="800px" style="border: none;"></iframe>
+        <p>
+            <a href="HAMEED_MOQADAM_CV.pdf" download class="download-btn">Download My CV</a>
+        </p>
+    </section>
 
-
-	<!-- CV Section -->
-	<section id="cv">
-	    <h2>CV</h2>
-	    <!-- Embedded PDF Viewer -->
-	    <iframe 
-		src="HAMEED_MOQADAM_CV.pdf" 
-		width="100%" 
-		height="800px" 
-		style="border: none;">
-	    </iframe>
-	    <!-- Download Button -->
-	    <p>
-		<a href="HAMEED_MOQADAM_CV.pdf" download class="download-btn">
-		    Download My CV
-		</a>
-	    </p>
-	</section>
-
-
-
-	<!-- Contact Section -->
-	<section id="contact">
-	    <h2>Contact</h2>
-	    <p>hameed.moqadam@awi.de</p>
-	    <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
-		<a href="https://www.linkedin.com/in/hameed-moqadam/" target="_blank">
-		    <img src="linkedin-logo.png" alt="LinkedIn" style="width: 40px; height: 55px;">
-		</a>
-		<a href="https://www.researchgate.net/profile/Hameed-Moqadam" target="_blank">
-		    <img src="researchgate-logo.png" alt="ResearchGate" style="width: 80px; height: 70px;">
-		</a>
-		<a href="https://orcid.org/my-orcid?orcid=0000-0002-8705-8883" target="_blank">
-		    <img src="orcid-logo.png" alt="ORCID" style="width: 80px; height: 30px;">
-		</a>
-		<a href="https://x.com/Hameed_Moqadam" target="_blank">
-		    <img src="x-logo.png" alt="X (Twitter)" style="width: 40px; height: 40px;">
-		</a>
-	    </div>
-	</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>hameed.moqadam@awi.de</p>
+        <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
+            <a href="https://www.linkedin.com/in/hameed-moqadam/" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn" style="width: 40px; height: 55px;">
+            </a>
+            <a href="https://www.researchgate.net/profile/Hameed-Moqadam" target="_blank">
+                <img src="researchgate-logo.png" alt="ResearchGate" style="width: 80px; height: 70px;">
+            </a>
+            <a href="https://orcid.org/my-orcid?orcid=0000-0002-8705-8883" target="_blank">
+                <img src="orcid-logo.png" alt="ORCID" style="width: 80px; height: 30px;">
+            </a>
+            <a href="https://x.com/Hameed_Moqadam" target="_blank">
+                <img src="x-logo.png" alt="X (Twitter)" style="width: 40px; height: 40px;">
+            </a>
+        </div>
+    </section>
 
     <footer>
         <p>Created by Hameed Moqadam. Powered by GitHub Pages.</p>
     </footer>
-
-    <script>
-        // Function to show the description and scroll to it
-        function showDescription(id) {
-            var section = document.getElementById(id);
-            section.style.display = "block";
-            section.scrollIntoView({behavior: "smooth"});
-        }
-    </script>
 </body>
 </html>
 
