@@ -3,118 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 1em;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 0.5em;
-            font-size: 1em;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 2em;
-            margin: 1em auto;
-            max-width: 800px;
-        }
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1em auto;
-        }
-        footer {
-            text-align: center;
-            padding: 2em;
-            background-color: #f4f4f4;
-        }
-    </style>
+    <title>My CV</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <a href="#bio">Bio</a>
-            <a href="#experience">Professional Experience</a>
-            <a href="#field">Field Experience</a>
-            <a href="#education">Education</a>
-            <a href="#publications">Publications</a>
-            <a href="#miscellaneous">Miscellaneous</a>
-            <a href="#hobbies">Hobbies</a>
-        </nav>
+        <h1>My Name</h1>
+        <p>Email: myemail@example.com | Phone: +123-456-7890 | LinkedIn: <a href="https://linkedin.com/in/myprofile">linkedin.com/in/myprofile</a></p>
     </header>
 
-    <section id="bio">
-        <h2>Bio</h2>
-        <img src="me_Kottas_small.jpeg" alt="Your photo">
-        <p>Hello! My name is Hameed Moqadam. I am a researcher specializing in radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#miscellaneous">Miscellaneous</a></li>
+        </ul>
+    </nav>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <p>I have worked as a deep learning researcher focusing on glaciological applications. My key achievements include developing IRHMapNet, a state-of-the-art tool for tracing radargram features.</p>
-    </section>
+    <main>
+        <section id="bio">
+            <h2>Bio</h2>
+            <p>A brief overview about me, highlighting key aspects of my professional and personal background.</p>
+        </section>
 
-    <section id="field">
-        <h2>Field Experience</h2>
-        <img src="field-photo1.jpg" alt="Fieldwork photo 1">
-        <img src="field-photo2.jpg" alt="Fieldwork photo 2">
-        <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
-    </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <h3>Job Title - Company Name</h3>
+                    <p><strong>Dates:</strong> Start Date - End Date</p>
+                    <p><strong>Responsibilities:</strong> A brief description of key duties and achievements.</p>
+                </li>
+                <!-- Add more experience entries as needed -->
+            </ul>
+        </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>Ph.D. in Glaciology, University of Antarctic Research.</p>
-        <p>Master's in Data Science, University of Machine Learning.</p>
-    </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>Degree - Institution</h3>
+                    <p><strong>Dates:</strong> Start Date - End Date</p>
+                    <p><strong>Details:</strong> Relevant coursework, achievements, or thesis topic.</p>
+                </li>
+                <!-- Add more education entries as needed -->
+            </ul>
+        </section>
 
-    <section id="publications">
-        <h2>Publications</h2>
-        <p>- Review Article: Feature tracing in radio-echo sounding products of terrestrial ice sheets and planetary bodies. DOI: <a href="https://doi.org/10.5194/egusphere-2024-1674">10.5194/egusphere-2024-1674</a></p>
-        <p>- Deep learning for radargram segmentation: Automatic mapping of basal units in ice sheets.</p>
-    </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
 
-    <section id="miscellaneous">
-        <h2>Miscellaneous</h2>
-        <p>I enjoy collaborating with fellow researchers, giving talks at conferences, and participating in open-source projects. Occasionally, I delve into data visualization for fun.</p>
-    </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3>Project Title</h3>
+                    <p>A brief description of the project, including its goals and outcomes.</p>
+                </li>
+                <!-- Add more project entries as needed -->
+            </ul>
+        </section>
 
-    <section id="hobbies">
-        <h2>Hobbies</h2>
-        <p>- Exploring nature trails and hiking.</p>
-        <p>- Building gadgets and coding personal projects.</p>
-        <p>- Reading science fiction novels and watching documentaries.</p>
-    </section>
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    <p><strong>Title:</strong> Publication Title</p>
+                    <p><strong>Details:</strong> Journal Name, Year, DOI</p>
+                </li>
+                <!-- Add more publication entries as needed -->
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <p>A brief overview of hobbies or personal interests that add depth to your profile.</p>
+        </section>
+
+        <section id="miscellaneous">
+            <h2>Miscellaneous</h2>
+            <p>Additional details or achievements that don't fit into the other categories.</p>
+        </section>
+    </main>
 
     <footer>
-        <p>Created by Hameed Moqadam. Powered by GitHub Pages.</p>
+        <p>&copy; 2024 My Name. All rights reserved.</p>
     </footer>
 </body>
 </html>
