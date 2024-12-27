@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #5C618B; /* Set the entire page's background color */
+    	    /*  font-size: 16px;  Default font size for the page */
         }
         header {
             background-color: #333;
             color: white;
-            padding: 1em;
-            text-align: center;
+            padding: 2em;
+            text-align: left;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -26,7 +29,7 @@
             padding: 1em;
         }
         nav a {
-            color: #dddaff;
+            color: white;
             text-decoration: none;
             margin: 0 0.5em;
             font-size: 1em;
@@ -35,17 +38,72 @@
             text-decoration: underline;
         }
         section {
-            padding: 2em;
-            margin: 1em auto;
-            max-width: 800px;
-            color: #333;
-            background-color: #dddaff;
+            padding: 0em;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px; 
+            color: white;
+            background-color:  #5C618B;
+            font-size: 1.5em;
+            margin-bottom: 0em; /* Add consistent spacing between all sections */
         }
+        
+		header h1 {
+		    margin: 0; /* Removes default margin for better alignment */
+		    text-align: left; /* Ensures the <h1> is explicitly aligned to the left */
+		}
         h2 {
+            font-size: 1.5em;
             border-bottom: 2px solid #ccc;
             padding-bottom: 0.5em;
             margin-bottom: 1em;
         }
+        
+        
+        
+        
+		/* Flexbox for Bio Section */
+	#bio {
+	    display: flex;
+	    flex-direction: column; /* Default for smaller screens */
+	    align-items: left;
+	    text-align: left;
+	    margin: 2em auto;
+	    max-width: 1200px; /* Optional: Adjust based on layout */
+	}
+
+	#bio img {
+	    max-width: 40%;
+	    height: auto;
+	    margin-right: 1em;
+	    border-radius: 10px; /* Optional: Rounded corners for a polished look */
+	}
+
+	#bio .bio-container {
+	    display: flex;
+	    flex-direction: row; /* Place items side by side */
+	    align-items: center;
+	    justify-content: center; /* Adjust alignment */
+	    text-align: left; /* Align text properly */
+	    gap: 1em; /* Space between the image and text */
+	}
+
+	@media (max-width: 768px) {
+	    #bio .bio-container {
+		flex-direction: column; /* Stack vertically for smaller screens */
+	    }
+
+	    #bio img {
+		margin: 0 auto 1em;
+	    }
+	}
+
+        
+        
+        
+        
+        
+        
         .photo-section {
             width: 100%;
             height: 400px;
@@ -73,11 +131,108 @@
             padding: 2em;
             background-color: #dddaff;
         }
+        
+
+        /* Additional CSS for CV and Contact Sections */
+        #cv, #contact {
+            margin: 2em auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+        #contact img:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }        
+        
+		
+		#cv {
+	    text-align: left;
+	    margin: 2em auto;
+	    max-width: 1200px;
+	    height: 800px; /* Adjust the height as needed */
+	    padding-bottom: 8em;
+	}
+
+	iframe {
+	    border: 1px solid #ccc;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	    margin-bottom: 1em;
+	}
+
+	.download-btn {
+	    text-align: left;
+	    text-decoration: none;
+	    padding: 0.5em 1em;
+	    background-color: #007bff;
+	    color: white;
+	    border-radius: 5px;
+	    font-weight: bold;
+	    transition: background-color 0.3s;
+	}
+
+	.download-btn:hover {
+	    background-color: #0056b3;
+	}
+
+		#field {
+	    text-align: left;
+	    /* background-color: #dddaff;  Background color for the section */
+	    padding: 2em;
+	}
+
+	.photo-grid {
+	    display: flex;
+	    flex-wrap: wrap;
+	    gap: 1em;
+	    justify-content: center; /* Center the grid items */
+	}
+
+	.photo-item {
+	    flex: 1 1 calc(33.333% - 1em); /* Each photo takes up a third of the row */
+	    max-width: 500px; /* Optional: Limit the size of the photos */
+	    text-align: center;
+	}
+
+	.photo-item img {
+	    width: 100%;
+	    height: auto;
+	    border-radius: 8px; /* Optional: Add rounded corners */
+	    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+	}
+
+	.photo-item img:hover {
+	    transform: scale(1.05); /* Slight zoom on hover */
+	    filter: brightness(1.2); /* Brightens the image on hover */
+	}
+
+	.photo-caption {
+	    margin-top: 0.5em;
+	    font-size: 0.9em;
+	    color: orange;
+	}
+
+	.field-description {
+	    margin-top: 2em;
+	    font-size: 1em;
+	    color: white;
+	}
+
+        
+        
+        
+        
+        
+        
     </style>
+    
+    
+    
+    
+    
 </head>
 <body>
     <header>
-        <h1>Hey, I'm Hameed</h1>
+        <h1> Hey, I'm Hameed</h1>
         <nav>
             <a href="#bio">Bio</a>
             <a href="#experience">Professional Experience</a>
@@ -89,39 +244,55 @@
         </nav>
     </header>
 
-    <!-- Bio Section -->
-    <section id="bio">
-        <h2>Bio</h2>
-        <img src="me_Kottas_small.jpg" alt="Your photo" style="max-width: 100%; height: auto;">
+
+
+
+<!-- Bio Section -->
+<section id="bio">
+    <h2>Bio</h2>
+    <div class="bio-container">
+        <img src="me_Kottas_small.jpg" alt="Your photo">
         <p>Hello! My name is Hameed Moqadam. I am a PhD candidate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
-    </section>
+    </div>
+</section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="photo-section" style="background-image: url('ant_kohnen.jpeg');" onclick="showDescription('experience-desc')"></div>
-        <div id="experience-desc" class="description">
-            <p>I have worked as a deep learning researcher focusing on glaciological applications. My key achievements include developing IRHMapNet, a state-of-the-art tool for tracing radargram features.</p>
-        </div>
-    </section>
 
-    <!-- Field Experience Section -->
-    <section id="field">
-        <h2>Field Experience</h2>
-        <div class="photo-section" style="background-image: url('ant_shelf.jpeg');" onclick="showDescription('field-desc')"></div>
-        <div id="field-desc" class="description">
-            <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
-        </div>
-    </section>
 
-    <!--
-    <!-- Education Section -->
+
+	<!-- Field Experience Section -->
+	<section id="field">
+	    <h2>Field Experience</h2>
+	    <!-- Photo Grid -->
+	    <div class="photo-grid">
+		<div class="photo-item">
+		    <img src="ant_shelf.jpeg" alt="Antarctic Shelf">
+		    <p class="photo-caption">Antarctic Ice Shelf</p>
+		</div>
+		<div class="photo-item">
+		    <img src="ant_troll.jpeg" alt="Troll Research Station">
+		    <p class="photo-caption">Troll Research Station</p>
+		</div>
+		<div class="photo-item">
+		    <img src="ant_kohnen.jpeg" alt="Kohnen Station">
+		    <p class="photo-caption">Kohnen Station</p>
+		</div>
+	    </div>
+	    <!-- Section Description -->
+	    <div class="field-description">
+		<p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
+	    </div>
+	</section>
+
+
+
+
+<!--
     <section id="education">
         <h2>Education</h2>
         <p>Ph.D. in Glaciology, University of Antarctic Research.</p>
         <p>Master's in Data Science, University of Machine Learning.</p>
     </section>
-    -->
+-->
 
     <!-- Publications Section -->
     <section id="publications">
@@ -148,6 +319,67 @@
         <p>- Coding personal projects.</p>
         <p>- Reading science fiction novels and watching documentaries.</p>
     </section>
+
+
+
+	<!-- CV Section -->
+	<section id="cv">
+	    <h2>CV</h2>
+	    <!-- Embedded PDF Viewer -->
+	    <iframe 
+		src="HAMEED_MOQADAM_CV.pdf" 
+		width="100%" 
+		height="800px" 
+		style="border: none;">
+	    </iframe>
+	    <!-- Download Button -->
+	    <p>
+		<a href="HAMEED_MOQADAM_CV.pdf" download class="download-btn">
+		    Download My CV
+		</a>
+	    </p>
+	</section>
+
+
+
+	<!-- Contact Section -->
+	<section id="contact">
+	    <h2>Contact</h2>
+	    <p>hameed.moqadam@awi.de</p>
+	    <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
+		<a href="https://www.linkedin.com/in/hameed-moqadam/" target="_blank">
+		    <img src="linkedin-logo.png" alt="LinkedIn" style="width: 40px; height: 55px;">
+		</a>
+		<a href="https://www.researchgate.net/profile/Hameed-Moqadam" target="_blank">
+		    <img src="researchgate-logo.png" alt="ResearchGate" style="width: 80px; height: 70px;">
+		</a>
+		<a href="https://orcid.org/my-orcid?orcid=0000-0002-8705-8883" target="_blank">
+		    <img src="orcid-logo.png" alt="ORCID" style="width: 80px; height: 30px;">
+		</a>
+		<a href="https://x.com/Hameed_Moqadam" target="_blank">
+		    <img src="x-logo.png" alt="X (Twitter)" style="width: 40px; height: 40px;">
+		</a>
+	    </div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer>
         <p>Created by Hameed Moqadam. Powered by GitHub Pages.</p>
