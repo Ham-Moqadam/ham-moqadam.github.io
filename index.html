@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #5C618B;
+            background-color: #5C618B; /* #2F7674; */
         }
 
         header {
@@ -47,7 +47,7 @@
             width: 90%;
             max-width: 1200px;
             color: white;
-            background-color: #5C618B;
+            background-color: #5C618B; /* #2F7674; */
             font-size: 1.5em;
             margin-bottom: 0.1em;
         }
@@ -72,9 +72,9 @@
         }
 
         #bio img {
-            max-width: 40%;
+            max-width: 50%;
             height: auto;
-            margin-right: 1em;
+            margin-right: 0.4em;
             border-radius: 10px;
         }
 
@@ -164,34 +164,113 @@
             transform: scale(1.1);
             transition: transform 0.2s;
         }
+        
+        a {
+	    color: orange; /* Change to any color you prefer */
+	    text-decoration: none; /* Optional: removes the underline */	 
+	}
+
+	a:hover {
+	    color: #FF5733; /* Change to the color you want on hover */
+	    text-decoration: underline; /* Optional: adds underline on hover */
+	}
+
+	html {
+	    scroll-behavior: smooth;
+	    scroll-padding-top: 80px;  /* Adjust this value based on your header height */
+	}
+	
+
+    .usage-notice {
+        font-size: 0.9em;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+
+<div class="image">
+    <img src="image.jpg" alt="Description of the image">
+    <p><em>Image © 2024 [Your Name]. All rights reserved. No unauthorized reproduction or distribution without permission.</em></p>
+</div>
+
 
     </style>
+
 </head>
+
+
+
 <body>
     <header>
         <h1> Hey, I'm Hameed</h1>
         <nav>
             <a href="#bio">Bio</a>
             <a href="#field">Field Experience</a>
-            <a href="#cv">CV</a>
             <a href="#publications">Publications</a>
-            <a href="#miscellaneous">Miscellaneous</a>
+            <a href="#conference-attendance">Conference Attendance</a>
+            <a href="#invited-talks">Invited talks</a>
+            <a href="#service-outreach">Service and Outreach</a>
             <a href="#hobbies">Hobbies</a>
+            <a href="#cv">CV</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section id="bio">
-        <h2>Bio</h2>
-        <div class="bio-container">
-            <img src="me_Kottas_small.jpg" alt="Your photo">
-            <p>Hello! My name is Hameed Moqadam. I am a PhD candidate at the Alfred Wegener Institute, specializing in RES radargram analysis and deep learning. I enjoy solving complex problems and exploring the wonders of glaciology.</p>
-        </div>
-    </section>
+<section id="bio">
+    <h2>Bio</h2>
+    <div class="bio-container">
+        <img src="ME.jpeg" alt="Your photo">
+        <p>
+            <strong>Ice Sheets | Radar | Scientific Machine Learning</strong>
+            <br>
+            <br>
+            <br>
+            I am a PhD candidate at the Alfred Wegener Institute, specializing in the application of radargram analysis and machine learning techniques to glaciological research.
+            <br>With a strong background in scientific computing and geophysical data analysis, I use my expertise in radar remote sensing, deep learning, and geophysics to further our understanding of ice sheet dynamics. 
+            <br><br>I enjoy working at the intersection between glaciology and computer science. 
+        </p>
+    </div>
+</section>
+
+
 
     <section id="field">
         <h2>Field Experience</h2>
         <div class="photo-grid">
+            <div class="photo-item">
+                <img src="ant_kohnen.jpeg" alt="Kohnen Station">
+                <p class="photo-caption">Kohnen Station</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="dig.png" alt="Kohnen Station">
+                <p class="photo-caption">digging out ApRES radar</p>
+            </div>
+            
+            <div class="photo-item">
+                <img src="stake.png" alt="Kohnen Station">
+                <p class="photo-caption">Stake measurement (measured 1124 stakes, planted 411 new ones)</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="tent.png" alt="Kohnen Station">
+                <p class="photo-caption">tent with the borehole thermometry equipment</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="trench.png" alt="Kohnen Station">
+                <p class="photo-caption">Snow sampling trench</p>
+            </div>
+
+            <div class="photo-item">
+                <img src="weather.png" alt="Kohnen Station">
+                <p class="photo-caption">Digging out an old AWS</p>
+            </div>
+            
+            
+            <!--
             <div class="photo-item">
                 <img src="ant_shelf.jpeg" alt="Antarctic Shelf">
                 <p class="photo-caption">Antarctic Ice Shelf</p>
@@ -200,15 +279,24 @@
                 <img src="ant_troll.jpeg" alt="Troll Research Station">
                 <p class="photo-caption">Troll Research Station</p>
             </div>
-            <div class="photo-item">
-                <img src="ant_kohnen.jpeg" alt="Kohnen Station">
-                <p class="photo-caption">Kohnen Station</p>
-            </div>
+            -->
+            
         </div>
         <div class="field-description">
             <p>Participated in Antarctic expeditions to gather radargram data. Worked closely with a multidisciplinary team to interpret radar signals.</p>
         </div>
+
+
+	    <div class="usage-notice">
+		<p><strong>Copyright &copy; 2024 Hameed Moqadam. All rights reserved.</strong></p>
+		<p>All images on this webpage are the exclusive property of Hameed Moqadam. These images are protected by copyright law and may not be reproduced, distributed, or used for any purpose without explicit permission. 
+		<br>Unauthorized use is strictly prohibited. 
+		<br>Please contact Hameed Moqadam at hameed.moqadam@awi.de for inquiries and permissions regarding image usage.</p>
+	    </div>
+
     </section>
+
+
 
     <section id="publications">
         <h2>Publications</h2>
@@ -218,12 +306,77 @@
         <p>DOI: <a href="https://doi.org/10.22541/essoar.172987463.39597493/v1">10.22541/essoar.172987463.39597493/v1</a></p>
         <p>- Basal unit and englacial stratigraphy mapping (Radargram Horizon1 Delineation) with an Autoregressive Generative Model. (Under preparation)</p>
     </section>
+    
+    
+    <section id="conference-attendance">
+    <h2>Conference Attendance</h2>
 
+    <h3>Oral Presentation</h3>
+    <ul>
+        <li><strong>8th Geomar Data Science Symposium 06.2023</strong><br>
+        Mapping Extended Internal Stratigraphy in Ice Sheets using Computer Vision Approaches. Kiel, Germany</li>
+
+        <li><strong>European Geosciences Union (EGU) General Assembly 05.2023</strong><br>
+        Tracing Extended Internal Stratigraphy in Ice Sheets using Computer Vision Approaches.</li>
+    </ul>
+
+    <h3>Session Convener</h3>
+    <ul>
+        <li><strong>European Geosciences Union (EGU) General Assembly 04.2025</strong><br>
+        Machine Learning for Cryospheric Sciences.</li>
+
+        <li><strong>ICY MARE Conference 09.2023</strong><br>
+        Applications of Machine Learning in Marine Sciences.</li>
+    </ul>
+
+    <h3>Poster Presentation</h3>
+    <ul>
+        <li><strong>FRISP - Forum for Research into Ice Shelf Processes 07.2024</strong><br>
+        Going deeper with deep learning, tracing deep internal reflection horizons in ice sheets.</li>
+
+        <li><strong>European Geosciences Union (EGU) General Assembly 04.2024</strong><br>
+        Mapping of deep internal reflection horizons, method modifications, and applications.</li>
+
+        <li><strong>The Willi Dansgaard Centenary Symposium, Niels Bohr Institute 08.2022</strong><br>
+        Automatic Mapping of Internal Stratigraphy in Ice Sheets, using conventional and learning methods.</li>
+
+        <li><strong>StratoClim Final Meetings and Conference 05.2019</strong><br>
+        Cirrus clouds evolution and origin observed through StratoClim campaign.</li>
+    </ul>
+	</section>
+	
+	
+	
+	
+	<section id="invited-talks">
+    <h2>Invited Talks</h2>
+    <ul>
+        <li><strong>University of Bergen, Geoscience Department December 2024</strong></li>
+        <li><strong>University of Bergen, Informatics Department November 2024</strong></li>
+        <li><strong>University of Tübingen, Glaciology & Geophysics Group March 2023</strong></li>
+        <li><strong>Talk for the Winners of German AI National Competitions (Bundeswettbewerbe KI, www.bw-ki.de) April 2023</strong></li>
+    </ul>
+	</section>
+
+	<section id="service-outreach">
+	    <h2>Service and Outreach</h2>
+	    <ul>
+		<li><strong>Development of Cape Verde Digital Twin in the Frame of MarDATA-WASCAL Program Collaboration (Mindelo, Cape Verde, March 2024)</strong></li>
+		<li><strong>Scientist for Future Representative at Research Mile at the Maritime Week in Bremen (Bremen, Germany, September 2023)</strong></li>
+		<li><strong>Gave a Speech at the Ju-Docs Ceremony 2019 at the Jülich Research Center for Scientists and Doctoral Researchers of the Entire Center, ∼500 Audience (Jülich, Germany, September 2019)</strong></li>
+	    </ul>
+</section>
+
+
+
+
+
+<!--,
     <section id="miscellaneous">
         <h2>Miscellaneous</h2>
         <p>I enjoy collaborating with fellow researchers, giving talks at conferences, and participating in open-source projects. Occasionally, I delve into data visualization for fun.</p>
     </section>
-
+-->
     <section id="hobbies">
         <h2>Hobbies</h2>
         <p>- Exploring nature trails and hiking.</p>
@@ -246,7 +399,7 @@
         <p>hameed.moqadam@awi.de</p>
         <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
             <a href="https://www.linkedin.com/in/hameed-moqadam/" target="_blank">
-                <img src="linkedin-logo.png" alt="LinkedIn" style="width: 40px; height: 55px;">
+                <img src="linkedin-logo.png" alt="LinkedIn" style="width: 50px; height: 70px;">
             </a>
             <a href="https://www.researchgate.net/profile/Hameed-Moqadam" target="_blank">
                 <img src="researchgate-logo.png" alt="ResearchGate" style="width: 80px; height: 70px;">
@@ -263,6 +416,30 @@
     <footer>
         <p>Created by Hameed Moqadam. Powered by GitHub Pages.</p>
     </footer>
+    
+
+
+<script>
+    document.addEventListener('contextmenu', function(event) {
+        if (event.target.tagName.toLowerCase() === 'img') {
+            event.preventDefault();
+        }
+    });
+</script>
+
+
+    
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
